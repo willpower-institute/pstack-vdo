@@ -1,6 +1,6 @@
 FROM python:3.12-slim
 
-ARG PSTACK_REF=v0.1.0
+ARG PSTACK_REF=v0.5.1
 
 RUN apt-get update && apt-get install -y --no-install-recommends git ffmpeg \
     && rm -rf /var/lib/apt/lists/*

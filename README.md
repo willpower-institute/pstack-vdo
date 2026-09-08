@@ -1,6 +1,6 @@
 # pstack-vdo
 
-Video streaming server บนฐาน [pstack](https://github.com/willpower-institute/pstack) (pin `PSTACK_REF=v0.1.0`)
+Video streaming server บนฐาน [pstack](https://github.com/willpower-institute/pstack) (pin `PSTACK_REF=v0.5.1`)
 — สร้างจาก [pstack-app-template](https://github.com/willpower-institute/pstack-app-template)
 
 ## โมดูล `vdo`
@@ -18,7 +18,7 @@ Video streaming server บนฐาน [pstack](https://github.com/willpower-ins
 ต้องมี pstack checkout ไว้ข้างๆ (tag ตรงกับ `PSTACK_REF` ใน .env.example):
 
 ```bash
-git clone --branch v0.1.0 https://github.com/willpower-institute/pstack.git ../pstack
+git clone --branch v0.5.1 https://github.com/willpower-institute/pstack.git ../pstack
 python3 -m venv .venv && .venv/bin/pip install -e "../pstack[dev]"
 
 export PSTACK_ADDONS_PATHS=../pstack/addons,vdo_addons
