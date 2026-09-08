@@ -19,7 +19,8 @@ if "PSTACK_ADDONS_PATHS" not in os.environ:
             break
 
 os.environ["PSTACK_DATABASE_URL"] = "sqlite+aiosqlite:///./test_app.db"
-os.environ["PSTACK_SECRET_KEY"] = "test-secret"
+os.environ["PSTACK_SECRET_KEY"] = "test-key-" + "x" * 40
+os.environ["PSTACK_ADMIN_PASSWORD"] = "test-admin-pw-9f3k2x"
 os.environ["PSTACK_MODULES"] = "users,storage,vdo"
 os.environ["PSTACK_STORAGE_DIR"] = "./test_uploads"
 os.environ["PSTACK_VDO_HLS_DIR"] = "./test_hls"
@@ -57,7 +58,7 @@ def client():
 @pytest.fixture(scope="module")
 def auth(client):
     token = client.post(
-        "/api/auth/login", json={"email": "admin@example.com", "password": "admin"}
+        "/api/auth/login", json={"email": "admin@example.com", "password": "test-admin-pw-9f3k2x"}
     ).json()["access_token"]
     return {"Authorization": f"Bearer {token}"}
 
